@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using NorthwindTraders.Data;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace NorthwindTraders
 {
@@ -29,6 +30,11 @@ namespace NorthwindTraders
             services.AddDbContext<NorthwindContext>(options => options.UseSqlServer(Configuration.GetConnectionString("NorthwindDatabase")));
 
             services.AddMvc();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "Northwind Traders API", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,6 +44,13 @@ namespace NorthwindTraders
             loggerFactory.AddDebug();
 
             app.UseMvc();
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Northwind Traders API V1");
+            });
 
             NorthwindInitializer.Initialize(context);
         }
