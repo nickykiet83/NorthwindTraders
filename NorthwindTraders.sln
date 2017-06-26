@@ -1,18 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindTraders", "NorthwindTraders\NorthwindTraders.csproj", "{5EE72F3D-9D81-4C30-A520-9C6185E09063}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthwindTraders", "NorthwindTraders\NorthwindTraders.csproj", "{5EE72F3D-9D81-4C30-A520-9C6185E09063}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindTraders.Data", "NorthwindTraders.Data\NorthwindTraders.Data.csproj", "{BF6DC0C6-C1F4-488B-8ABC-641C05656A68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthwindTraders.Data", "NorthwindTraders.Data\NorthwindTraders.Data.csproj", "{BF6DC0C6-C1F4-488B-8ABC-641C05656A68}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A5B0CAEB-853B-4FAA-BD33-6FBBB32B42CA}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindTraders.Domain", "NorthwindTraders.Domain\NorthwindTraders.Domain.csproj", "{48EEC8A5-0682-495B-9065-B3F1C3E2B1CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthwindTraders.Domain", "NorthwindTraders.Domain\NorthwindTraders.Domain.csproj", "{48EEC8A5-0682-495B-9065-B3F1C3E2B1CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindTraders.Commands", "NorthwindTraders.Commands\NorthwindTraders.Commands.csproj", "{FFD67034-84AF-4111-B545-13B7D23D4713}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +34,10 @@ Global
 		{48EEC8A5-0682-495B-9065-B3F1C3E2B1CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48EEC8A5-0682-495B-9065-B3F1C3E2B1CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48EEC8A5-0682-495B-9065-B3F1C3E2B1CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFD67034-84AF-4111-B545-13B7D23D4713}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFD67034-84AF-4111-B545-13B7D23D4713}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFD67034-84AF-4111-B545-13B7D23D4713}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFD67034-84AF-4111-B545-13B7D23D4713}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

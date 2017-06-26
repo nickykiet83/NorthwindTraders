@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System.Reflection;
+using MediatR;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
+using NorthwindTraders.Commands.Categories;
 using NorthwindTraders.Data;
 using Swashbuckle.AspNetCore.Swagger;
 
@@ -30,6 +33,8 @@ namespace NorthwindTraders
             services.AddDbContext<NorthwindContext>(options => options.UseSqlServer(Configuration.GetConnectionString("NorthwindDatabase")));
 
             services.AddMvc();
+
+            services.AddMediatR(typeof(SaveCategoryCommand).GetTypeInfo().Assembly);
 
             services.AddSwaggerGen(c =>
             {

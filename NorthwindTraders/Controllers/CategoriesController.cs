@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using NorthwindTraders.Commands.Categories;
 using NorthwindTraders.Data;
 using NorthwindTraders.Domain;
 
@@ -13,26 +15,27 @@ namespace NorthwindTraders.Controllers
     [Route("api/Categories")]
     public class CategoriesController : Controller
     {
-
-        private readonly NorthwindContext _context;
-
-        public CategoriesController(NorthwindContext context)
+        
+        private readonly IMediator _mediator;
+        public CategoriesController(IMediator mediator)
         {
-            _context = context;
+            _mediator = mediator;
         }
 
 
         [HttpGet]
-        public IEnumerable<Category> Get()
+        public async Task<IEnumerable<Category>> GetCategories()
         {
-            return _context.Categories.Select(c =>
-                new Category
-                {
-                   CategoryId = c.CategoryId,
-                   CategoryName = c.CategoryName,
-                   Description = c.Description
-                });
+            return await _mediator.Send(new GetCategoriesCommand());
         }
+
+
+        [HttpPost]
+        public async Task<Category> SaveCategory([FromBody] Category category)
+        {
+            return await _mediator.Send(new SaveCategoryCommand(category));
+        }
+        
 
 
 
